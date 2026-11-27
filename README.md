@@ -8,6 +8,12 @@ cp .env.example .env.local   # fill in what the client has confirmed
 npm run dev
 ```
 
+## Preview on GitHub Pages
+
+Every push to `main` builds a static copy and deploys it to https://faddzi.github.io/loopingyarns/ (`.github/workflows/pages.yml`).
+In the repo settings, Pages must use **GitHub Actions** as its source.
+Pages can't run server code, so the custom order form there always shows its WhatsApp fallback. For launch, host on Vercel or another Node host so the form can send email.
+
 ## Reviewing the three visual concepts
 
 Add `?look=candy`, `?look=studio` or `?look=night` to any URL, or use the switcher in the bottom-left corner.
