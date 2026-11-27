@@ -10,7 +10,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line/60 bg-bg/95 backdrop-blur-none">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
-        <Link href="/" className="display text-2xl md:text-3xl" aria-label="Looping Yarns, home">
+        <Link href="/" className="display whitespace-nowrap text-xl sm:text-2xl md:text-3xl" aria-label="Looping Yarns, home">
           Looping Yarns
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-6 md:flex">
@@ -20,7 +20,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="/custom" className="rounded-pill bg-accent px-4 py-2 text-sm font-semibold text-accent-ink md:text-base">
+        <Link href="/custom" className="whitespace-nowrap rounded-pill bg-accent px-3 py-2 text-sm font-semibold text-accent-ink sm:px-4 md:text-base">
           Order a custom piece
         </Link>
       </div>

@@ -6,6 +6,8 @@ import { Footer } from "@/components/Footer";
 import { MobileBar } from "@/components/MobileBar";
 import { LookSwitcher, lookInitScript } from "@/components/LookSwitcher";
 import { site } from "@/lib/site";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { YarnCursor } from "@/components/YarnCursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -29,6 +31,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Footer />
         <MobileBar />
         <LookSwitcher />
+        <SmoothScroll />
+        <YarnCursor />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "Organization", name: site.name, url: site.url, sameAs: [site.instagramUrl],
         }) }} />

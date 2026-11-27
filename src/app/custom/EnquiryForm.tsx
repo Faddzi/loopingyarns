@@ -63,7 +63,7 @@ export function EnquiryForm() {
       </div>
       <div className="grid gap-1.5">
         <label htmlFor="references" className="font-semibold">Reference images (optional, up to {MAX_FILES}, {MAX_FILE_BYTES / 1024 / 1024} MB each)</label>
-        <input id="references" name="references" type="file" accept="image/*" multiple aria-describedby={errors.references ? "references-error" : undefined} />
+        <input id="references" name="references" type="file" className="w-full min-w-0 text-sm" accept="image/*" multiple aria-describedby={errors.references ? "references-error" : undefined} />
         {errors.references && <p id="references-error" className="text-sm font-semibold">{errors.references}</p>}
       </div>
       {/* Honeypot: hidden from people, often filled by bots. */}

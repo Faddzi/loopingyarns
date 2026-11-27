@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Placeholder } from "@/components/Placeholder";
+import { StitchMoment } from "./StitchMoment";
 
 export const metadata: Metadata = {
   title: "About",
@@ -28,7 +29,7 @@ export default function About() {
         {processSteps.length === 0 ? (
           <p className="mt-6"><Placeholder>Process clips or photos: yarn, hook, beads, finished piece. Pending from client</Placeholder></p>
         ) : null}
-        {/* Milestone 3: one quiet 3D moment here, a single stitch or bead built step by step on scroll. */}
+        <StitchMoment />
       </section>
     </div>
   );

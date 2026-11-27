@@ -26,7 +26,7 @@ export function LookSwitcher() {
   }
 
   return (
-    <fieldset className="fixed bottom-20 left-4 z-50 flex gap-1 rounded-full border border-line bg-surface p-1 text-sm shadow md:bottom-4">
+    <fieldset className="fixed bottom-20 right-4 md:right-auto md:left-4 z-50 flex gap-1 rounded-full border border-line bg-surface p-1 text-sm shadow md:bottom-4">
       <legend className="sr-only">Visual concept</legend>
       {looks.map((l) => (
         <label key={l.id} className={`cursor-pointer rounded-full px-3 py-1.5 ${look === l.id ? "bg-accent text-accent-ink" : "text-ink"}`}>

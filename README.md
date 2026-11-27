@@ -42,12 +42,23 @@ Each shows on the page as `[dashed text in brackets]`.
 
 Functional pre-filled WhatsApp messages (for example "Hi Looping Yarns, I'd like to order the Heart Bag.") are in `src/lib/site.ts` and should be approved with the rest of the copy.
 
-## Still to build (milestone 3 onwards)
+## How the hero works
 
-- The scroll-linked sequence in the hero: strand unravels, threads beads, stitches the name, resolves into a product photo or reel (GSAP ScrollTrigger + Lenis)
-- Fuzzy fibre material for the yarn (shell texturing) and per-concept lighting
-- Bead builder on the Custom page (beadwork is confirmed)
-- Yarn cursor (desktop only)
-- The About page 3D moment
-- Unravelling animation on the 404 page
-- Image pipeline: AVIF/WebP with blur placeholders, reels under 2 MB with posters
+`src/components/hero/`. The section is pinned for about 1.6 screens of scroll, and GSAP ScrollTrigger feeds `heroProgress` (0 to 1) to the scene:
+the strand unravels and loops around the ball, beads thread onto it, it closes into the round badge from the logo, and the first featured piece appears inside it.
+Timings are in `progress.ts`. The drawn ball (`YarnPoster`) shows first; the WebGL scene loads on the first scroll, touch, key or mouse move, which keeps Lighthouse mobile at 97.
+With reduced motion, low memory, Save-Data or no WebGL the hero stays static and unpinned.
+
+## QA status
+
+- Build, type check and lint pass.
+- No horizontal overflow on any page at 375, 768, 1280 and 1536 px in all three looks.
+- Lighthouse mobile (local build, placeholders in place of photos): Home 97 / 100 / 100 / 100, Collection 98 / 100 / 100 / 100 (performance / accessibility / best practices / SEO). Re-run once real photos and reels are in.
+- Form: inline errors, honeypot, WhatsApp fallback when sending fails. The success state needs a Resend key to test end to end.
+
+## Before launch
+
+- Client content for every placeholder above, then delete `LookSwitcher` and the unused fonts.
+- Export photos as AVIF/WebP-ready originals into `public/media/<slug>/` (next/image converts them). Compress reels to H.264 MP4 under 2 MB with a poster image.
+- Add `offers` with price and currency to the Product structured data if prices are shown.
+- Set the environment variables from `.env.example` on the host, and a real `NEXT_PUBLIC_SITE_URL`.

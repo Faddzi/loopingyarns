@@ -9,9 +9,9 @@ import { featuredPieces, reelPieces, usedCategories } from "@/lib/content";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero piece={featuredPieces[0]} />
 
-      <section className="mx-auto max-w-7xl px-4 py-12 md:px-8">
+      <section id="featured" className="mx-auto max-w-7xl px-4 py-12 md:px-8">
         <h2 className="text-4xl md:text-5xl">Featured pieces</h2>
         <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
           {featuredPieces.map((p) => <PieceTile key={p.slug} piece={p} />)}
