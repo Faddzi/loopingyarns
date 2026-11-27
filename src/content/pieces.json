@@ -1,0 +1,196 @@
+{
+  "_note": "Names come from Instagram captions and are NOT yet approved by the client. Images and reels are pending the client's original export. Add a piece by adding an object below; put its files in public/media/<slug>/.",
+  "categories": [
+    {
+      "slug": "bags-and-pouches",
+      "name": "Bags and pouches"
+    },
+    {
+      "slug": "hats-and-caps",
+      "name": "Hats and caps"
+    },
+    {
+      "slug": "beadwork",
+      "name": "Beadwork",
+      "pending": true
+    },
+    {
+      "slug": "charms",
+      "name": "Charms"
+    },
+    {
+      "slug": "flowers-and-bouquets",
+      "name": "Flowers and bouquets"
+    },
+    {
+      "slug": "plushies",
+      "name": "Plushies"
+    },
+    {
+      "slug": "wedding",
+      "name": "Wedding"
+    },
+    {
+      "slug": "custom",
+      "name": "Custom"
+    }
+  ],
+  "pieces": [
+    {
+      "slug": "claret-miffy",
+      "name": "Claret Miffy",
+      "category": "plushies",
+      "featured": true,
+      "tone": "claret",
+      "images": [],
+      "reel": null,
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/p/DafIgGJxaWH/"
+    },
+    {
+      "slug": "elaborate-flower-bouquet",
+      "name": "Elaborate Flower Bouquet",
+      "category": "flowers-and-bouquets",
+      "featured": true,
+      "tone": "butter",
+      "images": [],
+      "reel": null,
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/p/DWJXb_BDJTG/"
+    },
+    {
+      "slug": "crochet-pouches",
+      "name": "Crochet Pouches",
+      "category": "bags-and-pouches",
+      "featured": false,
+      "tone": "lilac",
+      "images": [],
+      "reel": null,
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/p/DVYmZHRjG5V/"
+    },
+    {
+      "slug": "popcorn-cap",
+      "name": "Popcorn Cap",
+      "category": "hats-and-caps",
+      "featured": false,
+      "tone": "navy",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DVLGJdwjELQ/"
+    },
+    {
+      "slug": "heart-bag",
+      "name": "Heart Bag",
+      "category": "bags-and-pouches",
+      "featured": true,
+      "tone": "pink",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DUmtSxdCNfl/"
+    },
+    {
+      "slug": "panda-cap",
+      "name": "Panda Cap",
+      "category": "hats-and-caps",
+      "featured": true,
+      "tone": "cream",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DUXW_5aiAGP/"
+    },
+    {
+      "slug": "flower-pouch",
+      "name": "Flower Pouch",
+      "category": "bags-and-pouches",
+      "featured": false,
+      "tone": "butter",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DUUthlGCDZV/"
+    },
+    {
+      "slug": "varmala",
+      "name": "Varmala",
+      "category": "wedding",
+      "featured": true,
+      "tone": "pink",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DUAYG_gCvX7/"
+    },
+    {
+      "slug": "bake-your-charms-bag",
+      "name": "Bake Your Charms Bag",
+      "category": "charms",
+      "featured": false,
+      "tone": "cream",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DTuTJclCtnc/"
+    },
+    {
+      "slug": "heart-hat",
+      "name": "Heart Hat",
+      "category": "hats-and-caps",
+      "featured": false,
+      "tone": "pink",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DTrwQh1iI04/"
+    },
+    {
+      "slug": "seashell-bag",
+      "name": "Seashell Bag",
+      "category": "bags-and-pouches",
+      "featured": false,
+      "tone": "cream",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DTpCei0iuyR/"
+    },
+    {
+      "slug": "bloom-flower",
+      "name": "Bloom Flower",
+      "category": "bags-and-pouches",
+      "featured": true,
+      "tone": "lilac",
+      "images": [],
+      "reel": "pending",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "https://www.instagram.com/looping.yarns/reel/DThRAJYijFP/"
+    }
+  ]
+}

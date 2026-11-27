@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/*
+  Three visual concepts for client review. The active one is set by data-look on <html>.
+  Colours are proposals taken from the logo (claret, cream) and the dominant yarns in the posts.
+*/
+
+:root,
+[data-look="candy"] {
+  --bg: #fbf7ff;
+  --surface: #f1e9ff;
+  --ink: #241a3a;
+  --muted: #5d5275;
+  --accent: #6b2e3a;          /* claret, from the logo */
+  --accent-ink: #fff6f0;
+  --line: #241a3a;
+  --tone-claret: #7a2f3f;
+  --tone-butter: #f6c94c;
+  --tone-lilac: #b9a4f2;
+  --tone-navy: #22325c;
+  --tone-pink: #f490b4;
+  --tone-cream: #f4ece0;
+  --radius-lg: 2rem;
+  --radius-sm: 999px;
+  --font-display: var(--font-bagel);
+  --font-body: var(--font-figtree);
+  --display-weight: 400;
+  --display-tracking: -0.01em;
+}
+
+[data-look="studio"] {
+  --bg: #f8f3ef;
+  --surface: #efe6e2;
+  --ink: #3b2a2c;
+  --muted: #7a6667;
+  --accent: #6b4a4a;
+  --accent-ink: #f8f3ef;
+  --line: #d9cbc6;
+  --tone-claret: #b88c90;
+  --tone-butter: #efdca8;
+  --tone-lilac: #d6cbee;
+  --tone-navy: #a9b3c9;
+  --tone-pink: #f0cdd3;
+  --tone-cream: #ece3d8;
+  --radius-lg: 0.25rem;
+  --radius-sm: 0.25rem;
+  --font-display: var(--font-gloock);
+  --font-body: var(--font-hanken);
+  --display-weight: 400;
+  --display-tracking: -0.015em;
+}
+
+[data-look="night"] {
+  --bg: #17101a;
+  --surface: #231927;
+  --ink: #f3e9ec;
+  --muted: #b9a8b4;
+  --accent: #f2c14e;
+  --accent-ink: #17101a;
+  --line: #3a2d3f;
+  --tone-claret: #5a2433;
+  --tone-butter: #7a5f1f;
+  --tone-lilac: #4b3d78;
+  --tone-navy: #1d2a4d;
+  --tone-pink: #6e2f4a;
+  --tone-cream: #4a4038;
+  --radius-lg: 0.75rem;
+  --radius-sm: 0.5rem;
+  --font-display: var(--font-bricolage);
+  --font-body: var(--font-schibsted);
+  --display-weight: 700;
+  --display-tracking: -0.035em;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-line: var(--line);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-sm);
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display), serif;
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  line-height: 1.05;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.tone-claret { background: var(--tone-claret); }
+.tone-butter { background: var(--tone-butter); }
+.tone-lilac  { background: var(--tone-lilac); }
+.tone-navy   { background: var(--tone-navy); }
+.tone-pink   { background: var(--tone-pink); }
+.tone-cream  { background: var(--tone-cream); }
+
+/* Visible placeholder for copy or media the client has not supplied yet. */
+.placeholder {
+  border: 2px dashed currentColor;
+  border-radius: 0.5rem;
+  padding: 0.15em 0.5em;
+  opacity: 0.75;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  display: inline-block;
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 404: the stitched row draws in, then its tail slackens. */
+.unravel {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: unravel 1.6s cubic-bezier(.6,.1,.3,1) 0.2s forwards;
+}
+@keyframes unravel { to { stroke-dashoffset: 0; } }
