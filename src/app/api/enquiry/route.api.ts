@@ -26,7 +26,7 @@ export async function POST(req: Request) {
   }
 
   const rows: [string, string][] = [
-    ["Name", fields.name], ["Phone / WhatsApp", fields.phone], ["Email", fields.email],
+    ["Name", fields.name], ["Phone", fields.phone], ["Email", fields.email],
     ["Item type", fields.itemType], ["Colours", fields.colours], ["Quantity", fields.quantity],
     ["Needed by", fields.neededBy], ["Budget", fields.budget], ["Message", fields.message],
   ];

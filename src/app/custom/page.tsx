@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { EnquiryForm } from "./EnquiryForm";
 import { BeadBuilder } from "./BeadBuilder";
-import { InstagramButton, WhatsAppButton } from "@/components/ContactButtons";
-import { site } from "@/lib/site";
+import { InstagramButton } from "@/components/ContactButtons";
 
 export const metadata: Metadata = {
   title: "Custom orders",
@@ -16,8 +15,7 @@ export default function Custom() {
         <h1 className="text-5xl md:text-6xl">Made just for you</h1>
         <p className="mt-6 max-w-prose">Tell me what you have in mind: a bag in your favourite colours, a bouquet that never wilts, a charm with your initial, a gift for someone special. Share a photo or a rough idea, and I&apos;ll come back with options, a price and a timeline. Once you say yes, I start hooking, and send you progress photos along the way. Every piece is made by hand in Mumbai and ships worldwide.</p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <WhatsAppButton message="Hi Looping Yarns, I'd like to ask about a custom piece." />
-          <InstagramButton label={`Instagram @${site.instagramHandle}`} />
+          <InstagramButton />
         </div>
       </div>
       <div className="grid min-w-0 gap-8">

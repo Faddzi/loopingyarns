@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { InstagramButton } from "@/components/ContactButtons";
 import { CollectionGrid, CollectionGridFallback } from "./CollectionGrid";
 
 export const metadata: Metadata = {
@@ -14,6 +15,11 @@ export default function Collection() {
       <Suspense fallback={<CollectionGridFallback />}>
         <CollectionGrid />
       </Suspense>
+      <div className="mt-16 rounded-lg border-4 border-ink bg-surface p-6 shadow-[6px_6px_0_var(--ink)]">
+        <p className="display text-2xl">Seen something you love?</p>
+        <p className="mt-2 text-muted">Send me a DM with the piece name and I&apos;ll get back to you.</p>
+        <InstagramButton className="mt-4" />
+      </div>
     </div>
   );
 }

@@ -12,7 +12,7 @@ npm run dev
 
 Every push to `main` builds a static copy and deploys it to https://faddzi.github.io/loopingyarns/ (`.github/workflows/pages.yml`).
 In the repo settings, Pages must use **GitHub Actions** as its source.
-Pages can't run server code, so the custom order form there always shows its WhatsApp fallback. For launch, host on Vercel or another Node host so the form can send email.
+Pages can't run server code, so the custom order form there always shows its Instagram DM fallback. For launch, host on Vercel or another Node host so the form can send email.
 
 ## Visual direction
 
@@ -31,12 +31,11 @@ Draft copy (hero line, About, process, Custom orders intro, reply time "within 2
 
 Each shows on the page as `[dashed text in brackets]`.
 
-- WhatsApp number (`.env.local`)
 - All product photos and reels, including beadwork
 - Logo, favicon and social preview image
 - Brand colours (claret and cream from the logo are proposed, not confirmed)
 
-Functional pre-filled WhatsApp messages (for example "Hi Looping Yarns, I'd like to order the Heart Bag.") are in `src/lib/site.ts` and should be approved with the rest of the copy.
+All ordering goes through Instagram DMs (ig.me/m/looping.yarns). WhatsApp and email were dropped on request.
 
 ## How the hero works
 
@@ -50,7 +49,7 @@ With reduced motion, low memory, Save-Data or no WebGL the hero stays static and
 - Build, type check and lint pass.
 - No horizontal overflow on any page at 375, 768, 1280 and 1536 px.
 - Lighthouse mobile (local build, placeholders in place of photos): Home 97 / 100 / 100 / 100, Collection 98 / 100 / 100 / 100 (performance / accessibility / best practices / SEO). Re-run once real photos and reels are in.
-- Form: inline errors, honeypot, WhatsApp fallback when sending fails. The success state needs a Resend key to test end to end.
+- Form: inline errors, honeypot, Instagram DM fallback when sending fails. The success state needs a Resend key to test end to end.
 
 ## Before launch
 

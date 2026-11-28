@@ -3,7 +3,7 @@ import { Hero } from "@/components/hero/Hero";
 import { PieceTile } from "@/components/PieceTile";
 import { ReelsStrip } from "@/components/ReelsStrip";
 import { PixelArwa } from "@/components/PixelArwa";
-import { InstagramButton, WhatsAppButton } from "@/components/ContactButtons";
+import { InstagramButton } from "@/components/ContactButtons";
 import { featuredPieces, reelPieces, usedCategories } from "@/lib/content";
 
 export default function Home() {
@@ -50,8 +50,7 @@ export default function Home() {
         <div className="rounded-lg bg-surface px-6 py-12 md:px-12">
           <h2 className="text-4xl md:text-5xl">Order or ask for a custom piece</h2>
           <div className="mt-8 flex flex-wrap gap-3">
-            <WhatsAppButton message="Hi Looping Yarns, I'd like to order a piece." label="Order on WhatsApp" />
-            <InstagramButton />
+            <InstagramButton label="Order on Instagram" />
             <Link href="/custom" className="inline-flex items-center rounded-pill px-5 py-3 font-semibold underline underline-offset-4">Custom order form</Link>
           </div>
         </div>
