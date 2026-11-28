@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "@/lib/content";
 
 const nav = [
   { href: "/collection", label: "Collection" },
@@ -10,7 +11,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line/60 bg-bg/95 backdrop-blur-none">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
-        <Link href="/" className="display whitespace-nowrap text-xl sm:text-2xl md:text-3xl" aria-label="Looping Yarns, home">
+        <Link href="/" className="display flex items-center gap-3 whitespace-nowrap text-xl sm:text-2xl md:text-3xl" aria-label="Looping Yarns, home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={asset("/media/logo.png")} alt="" width={44} height={44} className="h-10 w-10 rounded-md md:h-11 md:w-11" />
           Looping Yarns
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-6 md:flex">

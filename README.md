@@ -29,10 +29,12 @@ Names currently come from Instagram captions and still need client approval. No 
 
 Draft copy (hero line, About, process, Custom orders intro, reply time "within 2 days") was invented on request and needs client approval. Email was dropped.
 
-Each shows on the page as `[dashed text in brackets]`.
+Photos, reels and the logo come from the client's Instagram export (Drive, 2026-11-28), compressed into `public/media` (reels 540px H.264, no audio). Piece names for new pieces were taken from the post graphics.
 
-- All product photos and reels, including beadwork
-- Logo, favicon and social preview image
+Each remaining placeholder shows on the page as `[dashed text in brackets]`.
+
+- Beadwork photos (none in the Instagram export yet)
+- Prices, colours and descriptions per piece
 - Brand colours (claret and cream from the logo are proposed, not confirmed)
 
 All ordering goes through Instagram DMs (ig.me/m/looping.yarns). WhatsApp and email were dropped on request.

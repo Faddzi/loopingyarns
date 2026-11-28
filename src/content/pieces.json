@@ -10,6 +10,10 @@
       "name": "Hats and caps"
     },
     {
+      "slug": "clothes",
+      "name": "Clothes"
+    },
+    {
       "slug": "beadwork",
       "name": "Beadwork",
       "pending": true
@@ -42,8 +46,15 @@
       "category": "plushies",
       "featured": true,
       "tone": "claret",
-      "images": [],
-      "reel": null,
+      "images": [
+        {
+          "src": "/media/claret-miffy.jpg",
+          "alt": "Claret Miffy, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 720
+        }
+      ],
+      "reel": "/media/claret-miffy.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -55,8 +66,15 @@
       "category": "flowers-and-bouquets",
       "featured": true,
       "tone": "butter",
-      "images": [],
-      "reel": null,
+      "images": [
+        {
+          "src": "/media/elaborate-flower-bouquet.jpg",
+          "alt": "Elaborate Flower Bouquet, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 960
+        }
+      ],
+      "reel": "/media/elaborate-flower-bouquet.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -68,8 +86,15 @@
       "category": "bags-and-pouches",
       "featured": false,
       "tone": "lilac",
-      "images": [],
-      "reel": null,
+      "images": [
+        {
+          "src": "/media/crochet-pouches.jpg",
+          "alt": "Crochet Pouches, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 900
+        }
+      ],
+      "reel": "/media/crochet-pouches.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -81,8 +106,15 @@
       "category": "hats-and-caps",
       "featured": false,
       "tone": "navy",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/popcorn-cap.jpg",
+          "alt": "Popcorn Cap, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/popcorn-cap.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -94,8 +126,15 @@
       "category": "bags-and-pouches",
       "featured": true,
       "tone": "pink",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/heart-bag.jpg",
+          "alt": "Heart Bag, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/heart-bag.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -107,8 +146,15 @@
       "category": "hats-and-caps",
       "featured": true,
       "tone": "cream",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/panda-cap.jpg",
+          "alt": "Panda Cap, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/panda-cap.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -120,8 +166,15 @@
       "category": "bags-and-pouches",
       "featured": false,
       "tone": "butter",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/flower-pouch.jpg",
+          "alt": "Flower Pouch, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/flower-pouch.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -133,8 +186,15 @@
       "category": "wedding",
       "featured": true,
       "tone": "pink",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/varmala.jpg",
+          "alt": "Varmala, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/varmala.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -146,8 +206,15 @@
       "category": "charms",
       "featured": false,
       "tone": "cream",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/bake-your-charms-bag.jpg",
+          "alt": "Bake Your Charms Bag, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/bake-your-charms-bag.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -159,8 +226,15 @@
       "category": "hats-and-caps",
       "featured": false,
       "tone": "pink",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/heart-hat.jpg",
+          "alt": "Heart Hat, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/heart-hat.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -172,8 +246,15 @@
       "category": "bags-and-pouches",
       "featured": false,
       "tone": "cream",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/seashell-bag.jpg",
+          "alt": "Seashell Bag, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/seashell-bag.mp4",
       "price": null,
       "colours": [],
       "description": null,
@@ -185,12 +266,219 @@
       "category": "bags-and-pouches",
       "featured": true,
       "tone": "lilac",
-      "images": [],
-      "reel": "pending",
+      "images": [
+        {
+          "src": "/media/bloom-flower.jpg",
+          "alt": "Bloom Flower, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/bloom-flower.mp4",
       "price": null,
       "colours": [],
       "description": null,
       "source": "https://www.instagram.com/looping.yarns/reel/DThRAJYijFP/"
+    },
+    {
+      "slug": "candy-floral-fantasy-bag",
+      "name": "Candy Floral Fantasy Bag",
+      "category": "bags-and-pouches",
+      "featured": true,
+      "tone": "pink",
+      "images": [
+        {
+          "src": "/media/candy-floral-fantasy-bag.jpg",
+          "alt": "Candy Floral Fantasy Bag, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/candy-floral-fantasy-bag.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "pink-flower-bag",
+      "name": "Pink Flower Bag",
+      "category": "bags-and-pouches",
+      "featured": false,
+      "tone": "pink",
+      "images": [
+        {
+          "src": "/media/pink-flower-bag.jpg",
+          "alt": "Pink Flower Bag, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/pink-flower-bag.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "teddy-bear",
+      "name": "Teddy Bear",
+      "category": "plushies",
+      "featured": false,
+      "tone": "butter",
+      "images": [
+        {
+          "src": "/media/teddy-bear.jpg",
+          "alt": "Teddy Bear, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/teddy-bear.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "heart-clip",
+      "name": "Heart Clip",
+      "category": "charms",
+      "featured": false,
+      "tone": "claret",
+      "images": [
+        {
+          "src": "/media/heart-clip.jpg",
+          "alt": "Heart Clip, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/heart-clip.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "sunflower-phone-hang",
+      "name": "Sunflower Phone Hang",
+      "category": "charms",
+      "featured": false,
+      "tone": "butter",
+      "images": [
+        {
+          "src": "/media/sunflower-phone-hang.jpg",
+          "alt": "Sunflower Phone Hang, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/sunflower-phone-hang.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "octopi-phone-hang",
+      "name": "Octopi Phone Hang",
+      "category": "charms",
+      "featured": false,
+      "tone": "lilac",
+      "images": [
+        {
+          "src": "/media/octopi-phone-hang.jpg",
+          "alt": "Octopi Phone Hang, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/octopi-phone-hang.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "mushroom-jumpsuit",
+      "name": "Mushroom Jumpsuit",
+      "category": "clothes",
+      "featured": true,
+      "tone": "cream",
+      "images": [
+        {
+          "src": "/media/mushroom-jumpsuit.jpg",
+          "alt": "Mushroom Jumpsuit, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/mushroom-jumpsuit.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "minty-mocha-vest",
+      "name": "Minty Mocha Vest",
+      "category": "clothes",
+      "featured": false,
+      "tone": "claret",
+      "images": [
+        {
+          "src": "/media/minty-mocha-vest.jpg",
+          "alt": "Minty Mocha Vest, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/minty-mocha-vest.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "baby-minty-dress",
+      "name": "Baby Minty Dress",
+      "category": "clothes",
+      "featured": false,
+      "tone": "lilac",
+      "images": [
+        {
+          "src": "/media/baby-minty-dress.jpg",
+          "alt": "Baby Minty Dress, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 900
+        }
+      ],
+      "reel": "/media/baby-minty-dress.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
+    },
+    {
+      "slug": "candy-set",
+      "name": "Candy Set",
+      "category": "clothes",
+      "featured": true,
+      "tone": "pink",
+      "images": [
+        {
+          "src": "/media/candy-set.jpg",
+          "alt": "Candy Set, handmade crochet by Looping Yarns",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "reel": "/media/candy-set.mp4",
+      "price": null,
+      "colours": [],
+      "description": null,
+      "source": "Instagram export (Drive), 2026-11-28"
     }
   ]
 }
