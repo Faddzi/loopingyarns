@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { InstagramButton } from "@/components/ContactButtons";
 import { PixelArwa } from "@/components/PixelArwa";
@@ -6,8 +7,9 @@ import { ProcessSteps } from "@/components/ProcessSteps";
 import { asset } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "The maker behind Looping Yarns, handmade crochet and beadwork.",
+  ...pageMeta("/about/"),
+  title: "About Arwa, crochet artist",
+  description: "Meet Arwa, the Mumbai crochet artist behind Looping Yarns, making handmade crochet and beadwork since 2016.",
 };
 
 export default function About() {
@@ -16,7 +18,7 @@ export default function About() {
       <div className="grid gap-10 md:grid-cols-2">
         <PixelArwa />
         <div>
-          <h1 className="text-5xl md:text-7xl">About</h1>
+          <h1 className="text-5xl md:text-7xl">About{" "}<span className="block mt-3 font-sans text-lg font-semibold tracking-normal text-muted md:text-2xl">Arwa, the crochet artist behind Looping Yarns</span></h1>
           {/* Draft copy written for review. Client to approve before launch. */}
           <p className="mt-6 text-xl font-semibold">Hi, I&apos;m Arwa.</p>
           <div className="mt-4 max-w-prose space-y-4">
