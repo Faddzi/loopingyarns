@@ -9,7 +9,7 @@ const nav = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line/60 bg-bg/95 backdrop-blur-none">
+    <header className="sticky top-0 z-40 border-b border-line/60 bg-bg">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
         <Link href="/" className="group display flex items-center gap-3 whitespace-nowrap text-xl sm:text-2xl md:text-3xl" aria-label="Looping Yarns, home">
           {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -20,6 +20,7 @@ const MAX = 18;
 
 export function BeadBuilder() {
   const [strand, setStrand] = useState<Bead[]>([]);
+  const [sheet, setSheet] = useState<"copied" | "manual" | null>(null);
   const [dragging, setDragging] = useState<{ bead: Bead; x: number; y: number } | null>(null);
   const [over, setOver] = useState(false);
   const target = useRef<HTMLDivElement>(null);
@@ -92,16 +93,44 @@ export function BeadBuilder() {
       <p aria-live="polite" className="sr-only">{status}</p>
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <a href={strand.length ? site.instagramDm : undefined} onClick={() => { navigator.clipboard?.writeText(summary).catch(() => {}); setStatus("Design copied. Paste it in the Instagram chat."); }} aria-disabled={!strand.length} target="_blank" rel="noopener noreferrer"
-           className={`inline-flex rounded-pill bg-accent px-5 py-3 font-semibold text-accent-ink ${strand.length ? "" : "pointer-events-none opacity-50"}`}>
-          Copy design & DM on Instagram
-        </a>
+        <button type="button" disabled={!strand.length}
+                onClick={() => {
+                  const ok = () => { setSheet("copied"); setStatus("Design copied. Open Instagram and paste it in the chat."); };
+                  if (navigator.clipboard) navigator.clipboard.writeText(summary).then(ok, () => setSheet("manual"));
+                  else setSheet("manual");
+                }}
+                className="inline-flex rounded-pill bg-accent px-5 py-3 font-semibold text-accent-ink disabled:opacity-50">
+          Send this design on Instagram
+        </button>
         {strand.length > 0 && (
           <button type="button" onClick={() => { setStrand([]); setStatus("Strand cleared."); }} className="rounded-pill border-2 border-ink px-5 py-3 font-semibold">
             Clear strand
           </button>
         )}
       </div>
+
+      {sheet && (
+        <div role="dialog" aria-modal="true" aria-labelledby="dm-title" className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-4 sm:items-center"
+             onClick={(e) => { if (e.target === e.currentTarget) setSheet(null); }}>
+          <div className="w-full max-w-md rounded-lg border-4 border-ink bg-bg p-6 shadow-[6px_6px_0_var(--ink)]">
+            <h3 id="dm-title" className="text-2xl">{sheet === "copied" ? "Design copied ✓" : "Copy your design"}</h3>
+            <ol className="mt-3 list-decimal space-y-1 pl-5">
+              {sheet === "manual" && <li>Select and copy the message below.</li>}
+              <li>Tap <strong>Open Instagram</strong>.</li>
+              <li>In the chat, long-press the message box and tap <strong>Paste</strong>, then send.</li>
+            </ol>
+            <textarea readOnly value={summary} rows={4} onFocus={(e) => e.currentTarget.select()}
+                      className="mt-4 w-full rounded-lg border-2 border-line bg-surface p-3 text-sm" aria-label="Your design message" />
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a href={site.instagramDm} target="_blank" rel="noopener noreferrer" onClick={() => setSheet(null)}
+                 className="inline-flex rounded-pill border-4 border-ink bg-accent px-5 py-3 font-semibold text-accent-ink shadow-[4px_4px_0_var(--ink)]">
+                Open Instagram
+              </a>
+              <button type="button" onClick={() => setSheet(null)} className="rounded-pill border-2 border-ink px-5 py-3 font-semibold">Back</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {dragging && (
         <div aria-hidden="true" className="pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-1/2" style={{ left: dragging.x, top: dragging.y }}>
