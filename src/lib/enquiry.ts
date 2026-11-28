@@ -8,7 +8,7 @@ export function validateEnquiry(fields: Record<string, string | undefined>, file
   const v = (k: string) => (fields[k] ?? "").trim();
   if (!v("name")) e.name = "Enter your name.";
   else if (v("name").length > 120) e.name = "Use 120 characters or fewer.";
-  if (!v("phone")) e.phone = "Enter a phone or WhatsApp number.";
+  if (!v("phone")) e.phone = "Enter a phone number.";
   else if (!/^[+\d][\d\s()-]{6,20}$/.test(v("phone"))) e.phone = "Enter a phone number with digits only, for example +91 98765 43210.";
   if (!v("email")) e.email = "Enter your email.";
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("email"))) e.email = "Enter an email like name@example.com.";

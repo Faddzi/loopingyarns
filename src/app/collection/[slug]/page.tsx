@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Gallery } from "@/components/Lightbox";
-import { InstagramButton, WhatsAppButton } from "@/components/ContactButtons";
+import { InstagramButton } from "@/components/ContactButtons";
 import { categoryName, getPiece, pieces } from "@/lib/content";
-import { orderMessage, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export function generateStaticParams() {
   return pieces.map((p) => ({ slug: p.slug }));
@@ -13,7 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const piece = getPiece((await params).slug);
   if (!piece) return {};
-  return { title: piece.name, description: `${piece.name}, handmade crochet by Looping Yarns. Order on WhatsApp or Instagram.` };
+  return { title: piece.name, description: `${piece.name}, handmade crochet by Looping Yarns. Order on Instagram.` };
 }
 
 export default async function PiecePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -30,8 +30,7 @@ export default async function PiecePage({ params }: { params: Promise<{ slug: st
         {piece.colours.length > 0 && <p className="mt-4">Colours: {piece.colours.join(", ")}</p>}
         {piece.description && <p className="mt-4 max-w-prose">{piece.description}</p>}
         <div className="mt-8 flex flex-wrap gap-3">
-          <WhatsAppButton message={orderMessage(piece.name)} label="Order on WhatsApp" />
-          <InstagramButton label="Ask on Instagram" />
+          <InstagramButton label="Order on Instagram" />
         </div>
       </div>
       {piece.price && (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { site, whatsappLink } from "@/lib/site";
+import { site } from "@/lib/site";
 import { MAX_FILES, MAX_FILE_BYTES, validateEnquiry, type FieldErrors } from "@/lib/enquiry";
 
 type State = "idle" | "sending" | "sent" | "error";
@@ -47,7 +47,7 @@ export function EnquiryForm() {
     <form onSubmit={onSubmit} noValidate className="grid gap-5 rounded-lg bg-surface p-6 md:p-8">
       <h2 className="text-3xl">Custom order form</h2>
       <Field name="name" label="Name" required error={errors.name} autoComplete="name" />
-      <Field name="phone" label="Phone or WhatsApp" required error={errors.phone} type="tel" autoComplete="tel" />
+      <Field name="phone" label="Phone" required error={errors.phone} type="tel" autoComplete="tel" />
       <Field name="email" label="Email" required error={errors.email} type="email" autoComplete="email" />
       <Field name="itemType" label="Item type (optional)" error={errors.itemType} />
       <Field name="colours" label="Colours (optional)" error={errors.colours} />
@@ -76,9 +76,9 @@ export function EnquiryForm() {
       {state === "error" && (
         <div role="alert" className="rounded-lg border-2 border-ink p-4">
           <p className="font-semibold">The enquiry didn&apos;t send.</p>
-          <p className="mt-1">Try again, or send the details on WhatsApp instead.</p>
-          <a href={whatsappLink("Hi Looping Yarns, I'd like to ask about a custom piece.")} target="_blank" rel="noopener noreferrer"
-             className="mt-3 inline-flex rounded-pill bg-accent px-5 py-2.5 font-semibold text-accent-ink">Message on WhatsApp</a>
+          <p className="mt-1">Try again, or send the details in an Instagram DM instead.</p>
+          <a href={site.instagramDm} target="_blank" rel="noopener noreferrer"
+             className="mt-3 inline-flex rounded-pill bg-accent px-5 py-2.5 font-semibold text-accent-ink">Message us on Instagram</a>
         </div>
       )}
     </form>

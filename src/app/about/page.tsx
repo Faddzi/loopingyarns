@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { InstagramButton } from "@/components/ContactButtons";
 import { PixelArwa } from "@/components/PixelArwa";
 import { ProcessSteps } from "@/components/ProcessSteps";
 
@@ -39,6 +40,7 @@ export default function About() {
             <p className="display text-2xl">Got an idea in mind?</p>
             <p className="mt-2 text-muted">Tell me what you&apos;re dreaming of and I&apos;ll crochet it for you.</p>
             <Link href="/custom" className="mt-4 inline-block rounded-pill border-4 border-ink bg-accent px-6 py-3 font-semibold text-accent-ink shadow-[4px_4px_0_var(--ink)] transition-transform hover:-translate-y-0.5">Order a custom piece</Link>
+            <InstagramButton label="Say hi on Instagram" className="ml-3 mt-4" />
             <p className="display mt-4 text-lg">— Arwa ♡</p>
           </div>
         </div>

@@ -3,7 +3,6 @@ import "./globals.css";
 import { fontVariables } from "./fonts";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { MobileBar } from "@/components/MobileBar";
 import { site } from "@/lib/site";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { YarnCursor } from "@/components/YarnCursor";
@@ -25,7 +24,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <MobileBar />
         <SmoothScroll />
         <YarnCursor />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

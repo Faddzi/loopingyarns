@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { whatsappLink } from "@/lib/site";
+import { site } from "@/lib/site";
 
 /**
- * Bead builder: drag beads from the tray onto the strand (or press one to add it), then send the design on WhatsApp.
+ * Bead builder: drag beads from the tray onto the strand (or press one to add it), then copy the design and send it in an Instagram DM.
  * Bead colours and shapes are proposals until the client confirms which beads they stock.
  */
 const BEADS = [
@@ -92,9 +92,9 @@ export function BeadBuilder() {
       <p aria-live="polite" className="sr-only">{status}</p>
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <a href={strand.length ? whatsappLink(summary) : undefined} aria-disabled={!strand.length} target="_blank" rel="noopener noreferrer"
+        <a href={strand.length ? site.instagramDm : undefined} onClick={() => { navigator.clipboard?.writeText(summary).catch(() => {}); setStatus("Design copied. Paste it in the Instagram chat."); }} aria-disabled={!strand.length} target="_blank" rel="noopener noreferrer"
            className={`inline-flex rounded-pill bg-accent px-5 py-3 font-semibold text-accent-ink ${strand.length ? "" : "pointer-events-none opacity-50"}`}>
-          Send this design on WhatsApp
+          Copy design & DM on Instagram
         </a>
         {strand.length > 0 && (
           <button type="button" onClick={() => { setStrand([]); setStatus("Strand cleared."); }} className="rounded-pill border-2 border-ink px-5 py-3 font-semibold">
