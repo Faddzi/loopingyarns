@@ -25,9 +25,9 @@ export const ARWA = [
   "...kCccttttttccCk...",
   "...kCcctyyyytccCk...",
   "...kCcsyYYyyyscCk...",
-  "...kCcsyyyyyyscCk..g",
-  "...ksccyyyyyyccskgg.",
-  "....kppppppppppkg...",
+  "...kCcsyyyyyyscCk...",
+  "...ksccyyyyyyccsk...",
+  "....kppppppppppk....",
   "....kppppppppppk....",
   "....kppppkkppppk....",
   "....kppppkkppppk....",
@@ -129,7 +129,22 @@ export function PixelArwa({ compact = false }: { compact?: boolean }) {
           <Pixels grid={BALL} palette={{ x: "#f490b4", X: "#ffffff88" }} x={38} y={42} />
           {/* Shadow, then Arwa */}
           <rect x="16" y="54" width="18" height="2" fill="#241a3a33" />
-          <Pixels grid={ARWA} palette={PALETTE} x={14} y={25} />
+          <g className="px-anim px-bob">
+            <Pixels grid={ARWA} palette={PALETTE} x={14} y={25} />
+            {/* Blink: skin-coloured lids over both eyes, shown for a moment every few seconds */}
+            <g className="px-anim px-blink" fill="#c98e6b">
+              <rect x={20} y={33} width={2} height={2} />
+              <rect x={26} y={33} width={2} height={2} />
+            </g>
+            {/* Hook working the stitch, and yarn feeding from the basket */}
+            <g className="px-anim px-hook" fill="#c9ccd4">
+              <rect x={28} y={43} width={1} height={1} />
+              <rect x={29} y={42} width={1} height={1} />
+              <rect x={30} y={41} width={1} height={1} />
+              <rect x={31} y={40} width={1} height={1} fill="#241a3a" />
+            </g>
+          </g>
+          <path className="px-anim px-feed" d="M28 46 Q 34 50 40 44" fill="none" stroke="#f490b4" strokeWidth="0.8" strokeDasharray="1.2 0.8" />
         </svg>
         <div className={`absolute left-1/2 top-[6%] w-[78%] -translate-x-1/2 border-4 border-ink bg-white px-3 py-2 shadow-[5px_5px_0_var(--accent)] [transform:translateZ(40px)] ${compact ? "text-sm" : ""}`}>
           <p className="font-display text-accent">Arwa</p>
