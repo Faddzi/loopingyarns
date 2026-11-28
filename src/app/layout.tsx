@@ -4,7 +4,6 @@ import { fontVariables } from "./fonts";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileBar } from "@/components/MobileBar";
-import { LookSwitcher, lookInitScript } from "@/components/LookSwitcher";
 import { site } from "@/lib/site";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { YarnCursor } from "@/components/YarnCursor";
@@ -18,10 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-look="candy" className={fontVariables} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: lookInitScript }} />
-      </head>
+    <html lang="en" className={fontVariables}>
       <body>
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-pill focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-ink">
           Skip to content
@@ -30,7 +26,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main">{children}</main>
         <Footer />
         <MobileBar />
-        <LookSwitcher />
         <SmoothScroll />
         <YarnCursor />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

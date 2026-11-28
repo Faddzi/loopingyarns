@@ -14,16 +14,9 @@ Every push to `main` builds a static copy and deploys it to https://faddzi.githu
 In the repo settings, Pages must use **GitHub Actions** as its source.
 Pages can't run server code, so the custom order form there always shows its WhatsApp fallback. For launch, host on Vercel or another Node host so the form can send email.
 
-## Reviewing the three visual concepts
+## Visual direction
 
-Add `?look=candy`, `?look=studio` or `?look=night` to any URL, or use the switcher in the bottom-left corner.
-The switcher is for client review only. Remove `LookSwitcher` once a concept is chosen, and drop the fonts of the other two from `src/app/fonts.ts`.
-
-| Concept | Palette | Type |
-| --- | --- | --- |
-| Candy pop | Saturated yarn colours, claret accent from the logo | Bagel Fat One, Figtree |
-| Soft studio | Off-white with pastel accents, muted claret | Gloock, Hanken Grotesk |
-| Night bead | Deep plum background, butter-yellow accent | Bricolage Grotesque, Schibsted Grotesk |
+Candy pop: saturated yarn colours with a claret accent from the logo, set in Bagel Fat One (display) and Figtree (body). Tokens are in `src/app/globals.css`.
 
 ## Content
 
@@ -58,13 +51,13 @@ With reduced motion, low memory, Save-Data or no WebGL the hero stays static and
 ## QA status
 
 - Build, type check and lint pass.
-- No horizontal overflow on any page at 375, 768, 1280 and 1536 px in all three looks.
+- No horizontal overflow on any page at 375, 768, 1280 and 1536 px.
 - Lighthouse mobile (local build, placeholders in place of photos): Home 97 / 100 / 100 / 100, Collection 98 / 100 / 100 / 100 (performance / accessibility / best practices / SEO). Re-run once real photos and reels are in.
 - Form: inline errors, honeypot, WhatsApp fallback when sending fails. The success state needs a Resend key to test end to end.
 
 ## Before launch
 
-- Client content for every placeholder above, then delete `LookSwitcher` and the unused fonts.
+- Client content for every placeholder above.
 - Export photos as AVIF/WebP-ready originals into `public/media/<slug>/` (next/image converts them). Compress reels to H.264 MP4 under 2 MB with a poster image.
 - Add `offers` with price and currency to the Product structured data if prices are shown.
 - Set the environment variables from `.env.example` on the host, and a real `NEXT_PUBLIC_SITE_URL`.

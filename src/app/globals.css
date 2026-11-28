@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 /*
-  Three visual concepts for client review. The active one is set by data-look on <html>.
+  Candy pop, the chosen visual direction.
   Colours are proposals taken from the logo (claret, cream) and the dominant yarns in the posts.
 */
 
-:root,
-[data-look="candy"] {
+:root {
   --bg: #fbf7ff;
   --surface: #f1e9ff;
   --ink: #241a3a;
@@ -26,50 +25,6 @@
   --font-body: var(--font-figtree);
   --display-weight: 400;
   --display-tracking: -0.01em;
-}
-
-[data-look="studio"] {
-  --bg: #f8f3ef;
-  --surface: #efe6e2;
-  --ink: #3b2a2c;
-  --muted: #7a6667;
-  --accent: #6b4a4a;
-  --accent-ink: #f8f3ef;
-  --line: #d9cbc6;
-  --tone-claret: #b88c90;
-  --tone-butter: #efdca8;
-  --tone-lilac: #d6cbee;
-  --tone-navy: #a9b3c9;
-  --tone-pink: #f0cdd3;
-  --tone-cream: #ece3d8;
-  --radius-lg: 0.25rem;
-  --radius-sm: 0.25rem;
-  --font-display: var(--font-gloock);
-  --font-body: var(--font-hanken);
-  --display-weight: 400;
-  --display-tracking: -0.015em;
-}
-
-[data-look="night"] {
-  --bg: #17101a;
-  --surface: #231927;
-  --ink: #f3e9ec;
-  --muted: #b9a8b4;
-  --accent: #f2c14e;
-  --accent-ink: #17101a;
-  --line: #3a2d3f;
-  --tone-claret: #5a2433;
-  --tone-butter: #7a5f1f;
-  --tone-lilac: #4b3d78;
-  --tone-navy: #1d2a4d;
-  --tone-pink: #6e2f4a;
-  --tone-cream: #4a4038;
-  --radius-lg: 0.75rem;
-  --radius-sm: 0.5rem;
-  --font-display: var(--font-bricolage);
-  --font-body: var(--font-schibsted);
-  --display-weight: 700;
-  --display-tracking: -0.035em;
 }
 
 @theme inline {

@@ -16,25 +16,6 @@ import { heroProgress, stage, STAGES } from "./progress";
 
 export type HeroLayout = { cx: number; cy: number; r: number }; // CSS pixels within the canvas
 
-type Look = "candy" | "studio" | "night";
-const LIGHTING: Record<Look, { ambient: number; key: number; rim: number; env: number }> = {
-  candy: { ambient: 0.65, key: 1.6, rim: 0.6, env: 1 },
-  studio: { ambient: 0.8, key: 1.1, rim: 0.3, env: 0.8 },
-  night: { ambient: 0.12, key: 1.9, rim: 2.4, env: 0.55 },
-};
-
-function useLook(): Look {
-  const [look, setLook] = useState<Look>("candy");
-  useEffect(() => {
-    const read = () => setLook((document.documentElement.dataset.look as Look) ?? "candy");
-    read();
-    const mo = new MutationObserver(read);
-    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-look"] });
-    return () => mo.disconnect();
-  }, []);
-  return look;
-}
-
 /** Where the ball sits and how big the badge loop is, for the current viewport. */
 function useStageLayout() {
   const { viewport, size } = useThree();
@@ -79,7 +60,7 @@ const shellFragment = /* glsl */ `
 
 const SHELLS = 10;
 
-function YarnBall({ colour, look }: { colour: string; look: Look }) {
+function YarnBall({ colour }: { colour: string }) {
   const group = useRef<THREE.Group>(null);
   const drag = useRef({ active: false, x: 0, y: 0, vx: 0.003, vy: 0 });
   const { ball, ballR } = useStageLayout();
@@ -104,8 +85,8 @@ function YarnBall({ colour, look }: { colour: string; look: Look }) {
     uniforms: { uH: { value: (i + 1) / SHELLS }, uColor: { value: new THREE.Color() }, uLight: { value: 1 } },
   })), []);
   useEffect(() => {
-    shellMats.forEach((m) => { m.uniforms.uColor.value.copy(col); m.uniforms.uLight.value = look === "night" ? 0.8 : 1.1; });
-  }, [col, look, shellMats]);
+    shellMats.forEach((m) => { m.uniforms.uColor.value.copy(col); m.uniforms.uLight.value = 1.1; });
+  }, [col, shellMats]);
   useEffect(() => () => { shellMats.forEach((m) => m.dispose()); windings.dispose(); }, [shellMats, windings]);
 
   useFrame(() => {
@@ -304,14 +285,13 @@ function LayoutReporter({ onLayout }: { onLayout?: (l: HeroLayout) => void }) {
   return null;
 }
 
-function Lights({ look }: { look: Look }) {
-  const l = LIGHTING[look];
+function Lights() {
   return (
     <>
-      <ambientLight intensity={l.ambient} />
-      <directionalLight position={[3, 4, 5]} intensity={l.key} />
-      <directionalLight position={[-4, 2, -3]} intensity={l.rim} color={look === "night" ? "#f2c14e" : "#ffffff"} />
-      <Environment resolution={64} environmentIntensity={l.env}>
+      <ambientLight intensity={0.65} />
+      <directionalLight position={[3, 4, 5]} intensity={1.6} />
+      <directionalLight position={[-4, 2, -3]} intensity={0.6} />
+      <Environment resolution={64}>
         <Lightformer form="rect" intensity={3} position={[0, 3, 2]} scale={[6, 2, 1]} />
         <Lightformer form="rect" intensity={1.2} position={[-4, 0, 1]} rotation-y={Math.PI / 2} scale={[4, 3, 1]} />
         <Lightformer form="circle" intensity={1.5} position={[3, 1, 3]} scale={1.5} />
@@ -321,12 +301,11 @@ function Lights({ look }: { look: Look }) {
 }
 
 export default function YarnScene({ colour, onLayout }: { colour: string; onLayout?: (l: HeroLayout) => void }) {
-  const look = useLook();
   return (
     <Canvas camera={{ position: [0, 0, 5], fov: 40 }} dpr={[1, 1.75]} gl={{ antialias: true, powerPreference: "high-performance" }}
             aria-hidden="true" style={{ touchAction: "pan-y" }}>
-      <Lights look={look} />
-      <YarnBall colour={colour} look={look} />
+      <Lights />
+      <YarnBall colour={colour} />
       <Strand colour={colour} />
       <IdlePhysics />
       <LayoutReporter onLayout={onLayout} />
