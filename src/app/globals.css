@@ -111,3 +111,14 @@ h1, h2, h3, .display {
 html.needle-cursor, html.needle-cursor * { cursor: none; }
 html.needle-cursor :is(input:not([type=radio]):not([type=checkbox]):not([type=file]):not([type=submit]), textarea, select, [contenteditable=true]) { cursor: text; }
 html.needle-cursor select { cursor: default; }
+
+/* Pixel Arwa: small, looping, purpose-free of text. Off entirely with reduced motion. */
+.px-bob { animation: px-bob 1.6s steps(2) infinite; }
+.px-blink { opacity: 0; animation: px-blink 4.5s steps(1) infinite; }
+.px-hook { animation: px-hook 0.8s steps(2) infinite; }
+.px-feed { animation: px-feed 1.2s linear infinite; }
+@keyframes px-bob { 50% { transform: translateY(0.5px); } }
+@keyframes px-blink { 0%, 94% { opacity: 0; } 95%, 98% { opacity: 1; } 99% { opacity: 0; } }
+@keyframes px-hook { 50% { transform: translate(-1px, 1px); } }
+@keyframes px-feed { to { stroke-dashoffset: -2; } }
+@media (prefers-reduced-motion: reduce) { .px-anim { animation: none !important; } }
