@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Hero } from "@/components/hero/Hero";
 import { PieceTile } from "@/components/PieceTile";
 import { ReelsStrip } from "@/components/ReelsStrip";
-import { Placeholder } from "@/components/Placeholder";
+import { PixelArwa } from "@/components/PixelArwa";
 import { InstagramButton, WhatsAppButton } from "@/components/ContactButtons";
 import { featuredPieces, reelPieces, usedCategories } from "@/lib/content";
 
@@ -38,9 +38,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 md:grid-cols-2 md:px-8">
-        <div className="flex aspect-[4/5] items-end rounded-lg bg-surface p-4">
-          <Placeholder>Founder photo</Placeholder>
-        </div>
+        <div className="mx-auto w-full max-w-md"><PixelArwa compact /></div>
         <div>
           <h2 className="text-4xl md:text-5xl">About</h2>
           <p className="mt-4 max-w-prose">Every piece is crocheted by hand by Arwa in Mumbai, one loop at a time, since 2016.</p>
