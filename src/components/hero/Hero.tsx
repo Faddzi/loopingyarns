@@ -99,8 +99,8 @@ export function Hero({ piece }: { piece: Piece }) {
   }
 
   return (
-    <section ref={section} className="relative h-[260svh] motion-reduce:h-[100svh]">
-      <div className="sticky top-0 h-[100svh] overflow-hidden">
+    <section ref={section} className="relative h-[260svh] motion-reduce:h-[calc(100svh-var(--header-h))]">
+      <div className="sticky top-[var(--header-h)] h-[calc(100svh-var(--header-h))] overflow-hidden">
         {live ? (
           <div className="absolute inset-0"><YarnScene colour={colour} onLayout={onLayout} /></div>
         ) : (
@@ -109,7 +109,7 @@ export function Hero({ piece }: { piece: Piece }) {
             <YarnPoster colour={colour} />
           </div>
         )}
-        <div className="pointer-events-none absolute inset-0 mx-auto flex max-w-7xl flex-col justify-between px-4 pb-24 pt-24 md:justify-center md:px-8 md:pb-8">
+        <div className="pointer-events-none absolute inset-0 mx-auto flex max-w-7xl flex-col justify-between px-4 pb-10 pt-6 md:justify-center md:px-8 md:pb-8">
           <div className="pointer-events-auto">{copy}</div>
           <div className="pointer-events-auto mt-6 md:absolute md:bottom-10 md:right-8">{swatchPicker}</div>
         </div>

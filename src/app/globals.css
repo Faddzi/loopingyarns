@@ -122,3 +122,8 @@ html.needle-cursor select { cursor: default; }
 @keyframes px-hook { 50% { transform: translate(-1px, 1px); } }
 @keyframes px-feed { to { stroke-dashoffset: -2; } }
 @media (prefers-reduced-motion: reduce) { .px-anim { animation: none !important; } }
+
+/* Height of the sticky header, so the home hero fills exactly the space below it. */
+:root { --header-h: 97px; }
+@media (min-width: 768px) { :root { --header-h: 80px; } }
+@media (min-width: 1024px) { :root { --header-h: 73px; } }
