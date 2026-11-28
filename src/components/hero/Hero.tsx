@@ -19,7 +19,7 @@ const YarnScene = dynamic(() => import("./YarnScene"), { ssr: false });
  * With reduced motion or on low-power devices it is a normal static section with a drawn yarn ball.
  */
 export function Hero({ piece }: { piece: Piece }) {
-  const [colour, setColour] = useState<string>(swatches[0].yarn);
+  const colour = swatches[0].yarn;
   const [live, setLive] = useState(false);
   const [layout, setLayout] = useState<HeroLayout | null>(null);
   const section = useRef<HTMLElement>(null);
@@ -71,19 +71,6 @@ export function Hero({ piece }: { piece: Piece }) {
     </div>
   );
 
-  const swatchPicker = (
-    <fieldset className="flex items-center gap-3">
-      <legend className="sr-only">Yarn colour</legend>
-      {swatches.map((s) => (
-        <label key={s.name} className="cursor-pointer">
-          <input type="radio" name="yarn" className="peer sr-only" checked={colour === s.yarn} onChange={() => setColour(s.yarn)} />
-          <span className="block h-9 w-9 rounded-full border-2 border-transparent ring-2 ring-line peer-checked:border-bg peer-checked:ring-ink peer-focus-visible:outline peer-focus-visible:outline-3 peer-focus-visible:outline-accent"
-                style={{ background: s.yarn }} />
-          <span className="sr-only">{s.name}</span>
-        </label>
-      ))}
-    </fieldset>
-  );
 
   if (!capable) {
     return (
@@ -91,7 +78,6 @@ export function Hero({ piece }: { piece: Piece }) {
         {copy}
         <div>
           <div className="mx-auto aspect-square w-full max-w-[560px]"><YarnPoster colour={colour} /></div>
-          <div className="mt-4 flex justify-center">{swatchPicker}</div>
         </div>
       </section>
     );
@@ -110,7 +96,6 @@ export function Hero({ piece }: { piece: Piece }) {
         )}
         <div className="pointer-events-none absolute inset-0 mx-auto flex max-w-7xl flex-col justify-between px-4 pb-10 pt-6 md:justify-center md:px-8 md:pb-8">
           <div className="pointer-events-auto">{copy}</div>
-          <div className="pointer-events-auto mt-6 md:mt-8">{swatchPicker}</div>
         </div>
         {layout && (
           <Link ref={reveal} href={`/collection/${piece.slug}`} tabIndex={-1}
