@@ -20,9 +20,9 @@ export type HeroLayout = { cx: number; cy: number; r: number }; // CSS pixels wi
 function useStageLayout() {
   const { viewport, size } = useThree();
   const wide = size.width >= size.height;
-  const ball = new THREE.Vector3(wide ? viewport.width * 0.24 : 0, wide ? -0.05 : -viewport.height * 0.12, 0);
+  const ball = new THREE.Vector3(wide ? viewport.width * 0.2 : 0, wide ? 0.2 : -viewport.height * 0.12, 0);
   const ringR = Math.min(1.2, viewport.width * 0.32, viewport.height * 0.26);
-  const ballR = Math.min(0.95, viewport.width * 0.26);
+  const ballR = wide ? Math.min(1.2, viewport.width * 0.2, viewport.height * 0.3) : Math.min(0.95, viewport.width * 0.26);
   return { ball, ringR, ballR, viewport, size };
 }
 
@@ -219,13 +219,13 @@ function Strand({ colour }: { colour: string }) {
 // ---------- Loose physics beads (idle state) ----------
 
 function LooseBeads() {
-  const { ball, viewport, size } = useStageLayout();
-  const floorY = Math.max(ball.y - 1.35, -viewport.height / 2 + (size.width >= size.height ? 0.25 : 1.0));
+  const { ball, ballR, viewport, size } = useStageLayout();
+  const floorY = Math.max(ball.y - ballR - 0.45, -viewport.height / 2 + (size.width >= size.height ? 0.25 : 1.0));
   const halfW = viewport.width / 2 - 0.15;
   const beads = useMemo(() => Array.from({ length: 14 }, (_, i) => ({
     colour: beadColours[i % beadColours.length],
-    position: [ball.x + ((i % 7) - 3) * 0.3, floorY + 0.4 + Math.floor(i / 7) * 0.35, 0.5 + (i % 3) * 0.15] as [number, number, number],
-  })), [ball.x, floorY]);
+    position: [ball.x + ((i % 7) - 3) * (size.width >= size.height ? 0.36 : 0.3), floorY + 0.4 + Math.floor(i / 7) * 0.35, 0.5 + (i % 3) * 0.15] as [number, number, number],
+  })), [ball.x, floorY, size.width, size.height]);
   return (
     <>
       {beads.map((b, i) => (

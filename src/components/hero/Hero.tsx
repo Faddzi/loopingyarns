@@ -63,8 +63,7 @@ export function Hero({ piece }: { piece: Piece }) {
 
   const copy = (
     <div className="relative z-10 max-w-xl">
-      <p className="display text-[clamp(3.25rem,10vw,7.5rem)] leading-[1.05]" aria-hidden="true">Looping Yarns</p>
-      <h1 className="mt-3"><span className="font-sans text-lg font-semibold tracking-normal text-muted md:text-2xl">Handmade crochet &amp; beadwork</span></h1>
+      <h1 className="text-[clamp(2.75rem,7vw,6.5rem)] leading-[1.02]">Handmade crochet &amp; beadwork</h1>
       <p className="mt-5 max-w-md text-lg">Bags, caps, charms, clothes and custom pieces, made by hand one loop at a time. Shipped worldwide.</p>
       <Link href="/custom" className="mt-8 inline-flex rounded-pill bg-accent px-6 py-3.5 text-lg font-semibold text-accent-ink">
         Order a custom piece
@@ -105,13 +104,13 @@ export function Hero({ piece }: { piece: Piece }) {
           <div className="absolute inset-0"><YarnScene colour={colour} onLayout={onLayout} /></div>
         ) : (
           // Same place and size as the 3D ball (see useStageLayout in YarnScene).
-          <div aria-hidden="true" className="absolute left-1/2 top-[62%] aspect-square w-[min(69svh,69vw)] -translate-x-1/2 -translate-y-1/2 landscape:left-[74%] landscape:top-[51.4%]">
+          <div aria-hidden="true" className="absolute left-1/2 top-[62%] aspect-square w-[min(69svh,69vw)] -translate-x-1/2 -translate-y-1/2 landscape:left-[70%] landscape:top-[44%]">
             <YarnPoster colour={colour} />
           </div>
         )}
         <div className="pointer-events-none absolute inset-0 mx-auto flex max-w-7xl flex-col justify-between px-4 pb-10 pt-6 md:justify-center md:px-8 md:pb-8">
           <div className="pointer-events-auto">{copy}</div>
-          <div className="pointer-events-auto mt-6 md:absolute md:bottom-10 md:right-8">{swatchPicker}</div>
+          <div className="pointer-events-auto mt-6 md:mt-8">{swatchPicker}</div>
         </div>
         {layout && (
           <Link ref={reveal} href={`/collection/${piece.slug}`} tabIndex={-1}
