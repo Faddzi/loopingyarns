@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Placeholder } from "@/components/Placeholder";
 import { site, whatsappLink } from "@/lib/site";
 import { MAX_FILES, MAX_FILE_BYTES, validateEnquiry, type FieldErrors } from "@/lib/enquiry";
 
@@ -38,7 +37,7 @@ export function EnquiryForm() {
       <div role="status" className="rounded-lg bg-surface p-8">
         <h2 className="text-3xl">Enquiry sent</h2>
         <p className="mt-3">
-          Looping Yarns will reply {site.replyTime || <Placeholder>reply time to confirm</Placeholder>}.
+          Looping Yarns will reply {site.replyTime || "within 2 days"}.
         </p>
       </div>
     );

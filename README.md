@@ -27,14 +27,11 @@ Names currently come from Instagram captions and still need client approval. No 
 
 ## Placeholders still in the build
 
+Draft copy (hero line, About, process, Custom orders intro, reply time "within 2 days") was invented on request and needs client approval. Email was dropped.
+
 Each shows on the page as `[dashed text in brackets]`.
 
-- Hero line (Home)
-- Founder name, photo and story (Home teaser, About)
-- Process clips or photos (About)
-- Custom Orders headline and intro
-- WhatsApp number and email (`.env.local`)
-- Reply time in the form success message and location in the footer (`src/lib/site.ts`)
+- WhatsApp number (`.env.local`)
 - All product photos and reels, including beadwork
 - Logo, favicon and social preview image
 - Brand colours (claret and cream from the logo are proposed, not confirmed)

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { PieceTile } from "@/components/PieceTile";
-import { Placeholder } from "@/components/Placeholder";
 import { categories, pieces } from "@/lib/content";
 
 const filters = categories.filter((c) => c.slug !== "custom" && (c.pending || pieces.some((p) => p.category === c.slug)));
@@ -31,7 +30,7 @@ function Grid({ category }: { category: string | null }) {
           {shown.map((p, i) => <PieceTile key={p.slug} piece={p} priority={i < 4} />)}
         </div>
       ) : (
-        <p className="mt-10"><Placeholder>{active?.name} pieces: photos pending from client</Placeholder></p>
+        <p className="mt-10">New {active?.name?.toLowerCase()} pieces are on the hook. Want one now? Order a custom piece and I&apos;ll make it for you.</p>
       )}
     </>
   );
