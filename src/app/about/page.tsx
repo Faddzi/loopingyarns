@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Placeholder } from "@/components/Placeholder";
 import { StitchMoment } from "./StitchMoment";
+import { PixelArwa } from "@/components/PixelArwa";
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,9 +15,7 @@ export default function About() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 md:px-8">
       <div className="grid gap-10 md:grid-cols-2">
-        <div className="flex aspect-[4/5] items-end rounded-lg bg-surface p-4">
-          <Placeholder>Founder photo</Placeholder>
-        </div>
+        <PixelArwa />
         <div>
           <h1 className="text-5xl md:text-7xl">About</h1>
           {/* Draft copy written for review. Client to approve before launch. */}
