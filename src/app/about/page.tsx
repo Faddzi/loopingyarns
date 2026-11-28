@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { StitchMoment } from "./StitchMoment";
 import { PixelArwa } from "@/components/PixelArwa";
 import { ProcessSteps } from "@/components/ProcessSteps";
 
@@ -29,7 +28,6 @@ export default function About() {
         <h2 className="text-4xl md:text-5xl">How a piece is made</h2>
         <p className="mt-6 max-w-prose">Yarn, a hook, a handful of beads and a lot of patience. Each piece starts as a single chain and is built row by row until it&apos;s ready to wear, carry or gift.</p>
         <ProcessSteps />
-        <StitchMoment />
       </section>
     </div>
   );
