@@ -119,6 +119,10 @@ export function PixelArwa({ compact = false }: { compact?: boolean }) {
           {balls.slice(0, 3).map((col, i) => <Pixels key={i} grid={BALL} palette={{ x: col, X: "#ffffff88" }} x={2 + i * 5.5} y={15} />)}
           <rect x="31" y="14" width="15" height="1.5" fill="#7a2f3f" />
           {balls.slice(3).map((col, i) => <Pixels key={i} grid={BALL} palette={{ x: col, X: "#ffffff66" }} x={32 + i * 6} y={9} />)}
+          {/* Framed pixel heart on the wall */}
+          <rect x="20" y="10" width="9" height="9" fill="#241a3a" />
+          <rect x="21" y="11" width="7" height="7" fill="#fff8e7" />
+          {[[22,13],[23,13],[25,13],[26,13],[22,14],[23,14],[24,14],[25,14],[26,14],[23,15],[24,15],[25,15],[24,16]].map(([x, y]) => <rect key={`h${x}-${y}`} x={x} y={y} width="1.02" height="1.02" fill="#e8577a" />)}
           {/* Bead garland */}
           {Array.from({ length: 22 }, (_, i) => (
             <rect key={i} x={2 + i * 2} y={4 + Math.round(Math.sin((i / 21) * Math.PI) * 3)} width="1.4" height="1.4" fill={balls[i % balls.length]} />

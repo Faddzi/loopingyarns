@@ -6,7 +6,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Piece } from "@/lib/content";
-import { Placeholder } from "../Placeholder";
 import { PieceMedia } from "../PieceMedia";
 import { swatches } from "./palette";
 import { YarnPoster } from "./YarnPoster";
@@ -65,7 +64,7 @@ export function Hero({ piece }: { piece: Piece }) {
   const copy = (
     <div className="relative z-10 max-w-xl">
       <h1 className="text-[clamp(3.25rem,10vw,7.5rem)]">Looping Yarns</h1>
-      <p className="mt-5 max-w-md text-lg"><Placeholder>Hero line: client to supply</Placeholder></p>
+      <p className="mt-5 max-w-md text-lg">Handmade crochet and beadwork from Mumbai, one loop at a time.</p>
       <Link href="/custom" className="mt-8 inline-flex rounded-pill bg-accent px-6 py-3.5 text-lg font-semibold text-accent-ink">
         Order a custom piece
       </Link>
