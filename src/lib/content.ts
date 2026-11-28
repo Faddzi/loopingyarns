@@ -22,7 +22,14 @@ export type Piece = {
 export type Category = { slug: string; name: string; pending?: boolean };
 
 export const categories: Category[] = data.categories;
-export const pieces = data.pieces as Piece[];
+/** Prefixes /public paths with the GitHub Pages base path (empty on a normal host). */
+export const asset = (src: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${src}`;
+
+export const pieces = (data.pieces as Piece[]).map((p) => ({
+  ...p,
+  images: p.images.map((i) => ({ ...i, src: asset(i.src) })),
+  reel: p.reel && p.reel !== "pending" ? asset(p.reel) : p.reel,
+}));
 
 export const featuredPieces = pieces.filter((p) => p.featured).slice(0, 8);
 export const reelPieces = pieces.filter((p) => p.reel);
