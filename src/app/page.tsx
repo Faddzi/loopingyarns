@@ -43,7 +43,7 @@ export default function Home() {
         </div>
         <div>
           <h2 className="text-4xl md:text-5xl">About</h2>
-          <p className="mt-4"><Placeholder>Short approved line about the founder</Placeholder></p>
+          <p className="mt-4 max-w-prose">Every piece is crocheted by hand by Arwa in Mumbai, one loop at a time, since 2016.</p>
           <Link href="/about" className="mt-6 inline-block font-semibold underline underline-offset-4">Read about Looping Yarns</Link>
         </div>
       </section>
