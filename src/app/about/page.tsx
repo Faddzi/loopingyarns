@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Placeholder } from "@/components/Placeholder";
 import { StitchMoment } from "./StitchMoment";
 import { PixelArwa } from "@/components/PixelArwa";
+import { ProcessSteps } from "@/components/ProcessSteps";
 
 export const metadata: Metadata = {
   title: "About",
   description: "The maker behind Looping Yarns, handmade crochet and beadwork.",
 };
-
-// Process steps are shown only where real clips or photos exist. None are in the content yet.
-const processSteps: { title: string; media: string | null }[] = [];
 
 export default function About() {
   return (
@@ -31,9 +28,7 @@ export default function About() {
       <section className="mt-20">
         <h2 className="text-4xl md:text-5xl">How a piece is made</h2>
         <p className="mt-6 max-w-prose">Yarn, a hook, a handful of beads and a lot of patience. Each piece starts as a single chain and is built row by row until it&apos;s ready to wear, carry or gift.</p>
-        {processSteps.length === 0 ? (
-          <p className="mt-4"><Placeholder>Process clips or photos pending from client</Placeholder></p>
-        ) : null}
+        <ProcessSteps />
         <StitchMoment />
       </section>
     </div>
