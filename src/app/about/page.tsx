@@ -4,7 +4,6 @@ import Link from "next/link";
 import { InstagramButton } from "@/components/ContactButtons";
 import { PixelArwa } from "@/components/PixelArwa";
 import { ProcessSteps } from "@/components/ProcessSteps";
-import { asset } from "@/lib/content";
 
 export const metadata: Metadata = {
   ...pageMeta("/about/"),
@@ -51,8 +50,6 @@ export default function About() {
 
       <section className="mt-20">
         <h2 className="text-4xl md:text-5xl">How a piece is made</h2>
-        <video src={asset("/media/yarn-process.mp4")} muted loop autoPlay playsInline preload="metadata" aria-label="Yarn balls ready to be crocheted"
-               className="float-right ml-6 mt-6 hidden w-48 rounded-lg border-4 border-ink shadow-[6px_6px_0_var(--ink)] md:block" />
         <p className="mt-6 max-w-prose">Yarn, a hook, a handful of beads and a lot of patience. Each piece starts as a single chain and is built row by row until it&apos;s ready to wear, carry or gift.</p>
         <ProcessSteps />
       </section>
