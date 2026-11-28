@@ -10,7 +10,7 @@ npm run dev
 
 ## Preview on GitHub Pages
 
-Every push to `main` builds a static copy and deploys it to https://faddzi.github.io/loopingyarns/ (`.github/workflows/pages.yml`).
+Every push to `main` builds a static copy and deploys it to https://loopingyarns.in (custom domain set in the repo's Pages settings) (`.github/workflows/pages.yml`).
 In the repo settings, Pages must use **GitHub Actions** as its source.
 Pages can't run server code, so the custom order form there always shows its Instagram DM fallback. For launch, host on Vercel or another Node host so the form can send email.
 
