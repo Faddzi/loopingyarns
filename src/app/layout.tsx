@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import "./globals.css";
 import { fontVariables } from "./fonts";
 import { Header } from "@/components/Header";
@@ -9,9 +10,9 @@ import { YarnCursor } from "@/components/YarnCursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: "Looping Yarns | Handmade crochet", template: "%s | Looping Yarns" },
-  description: "Handmade crochet and beadwork by Looping Yarns. Bags, pouches, caps, charms and custom pieces.",
-  openGraph: { siteName: "Looping Yarns", type: "website" },
+  title: { default: "Looping Yarns | Handmade crochet & beadwork in Mumbai", template: "%s | Looping Yarns" },
+  description: "Handmade crochet and beadwork from Mumbai by Looping Yarns: bags, caps, charms, clothes and custom pieces, shipped worldwide.",
+  ...pageMeta("/"),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

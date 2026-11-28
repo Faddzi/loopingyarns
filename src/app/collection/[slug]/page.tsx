@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Gallery } from "@/components/Lightbox";
@@ -13,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const piece = getPiece((await params).slug);
   if (!piece) return {};
-  return { title: piece.name, description: `${piece.name}, handmade crochet by Looping Yarns. Order on Instagram.` };
+  return { ...pageMeta(`/collection/${piece.slug}/`), title: piece.name, description: `${piece.name}, handmade crochet by Looping Yarns in Mumbai. Order on Instagram, ships worldwide.` };
 }
 
 export default async function PiecePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,7 +26,7 @@ export default async function PiecePage({ params }: { params: Promise<{ slug: st
       <Gallery piece={piece} />
       <div className="md:sticky md:top-28 md:self-start">
         <Link href={`/collection?category=${piece.category}`} className="text-muted underline-offset-4 hover:underline">{categoryName(piece.category)}</Link>
-        <h1 className="mt-2 text-5xl md:text-6xl">{piece.name}</h1>
+        <h1 className="mt-2 text-5xl md:text-6xl">{piece.name}<span className="sr-only"> – handmade crochet by Looping Yarns</span></h1>
         {piece.price && <p className="mt-4 text-2xl font-semibold">{piece.price}</p>}
         {piece.colours.length > 0 && <p className="mt-4">Colours: {piece.colours.join(", ")}</p>}
         {piece.description && <p className="mt-4 max-w-prose">{piece.description}</p>}

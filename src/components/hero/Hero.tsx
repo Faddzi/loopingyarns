@@ -63,8 +63,10 @@ export function Hero({ piece }: { piece: Piece }) {
 
   const copy = (
     <div className="relative z-10 max-w-xl">
-      <h1 className="text-[clamp(3.25rem,10vw,7.5rem)]">Looping Yarns</h1>
-      <p className="mt-5 max-w-md text-lg">Handmade crochet and beadwork from Mumbai, one loop at a time.</p>
+      <h1 className="text-[clamp(3.25rem,10vw,7.5rem)]">Looping Yarns
+        <span className="block mt-3 font-sans text-lg font-semibold tracking-normal text-muted md:text-2xl">Handmade crochet &amp; beadwork from Mumbai</span>
+      </h1>
+      <p className="mt-5 max-w-md text-lg">Bags, caps, charms, clothes and custom pieces, made by hand one loop at a time. Shipped worldwide.</p>
       <Link href="/custom" className="mt-8 inline-flex rounded-pill bg-accent px-6 py-3.5 text-lg font-semibold text-accent-ink">
         Order a custom piece
       </Link>
